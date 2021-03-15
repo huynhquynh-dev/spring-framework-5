@@ -1,20 +1,20 @@
 package com.lionhuynh.springframework5.config;
 
 import com.lionhuynh.springframework5.exxamplebeans.FakeDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.lionhuynh.springframework5.exxamplebeans.JmsDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource("classpath:datasource.properties")
+@PropertySources({
+        @PropertySource("classpath:datasource.properties"),
+        @PropertySource("classpath:jms.properties")
+})
 public class PropertyConfig {
-
-    @Autowired
-    Environment environment;
 
     @Value("${lionhuynh.username}")
     String user;
@@ -25,13 +25,31 @@ public class PropertyConfig {
     @Value("${lionhuynh.dburl}")
     String url;
 
+    @Value("${lionhuynh.jms.username}")
+    String jmsUser;
+
+    @Value("${lionhuynh.jms.password}")
+    String jmsPassword;
+
+    @Value("${lionhuynh.jms.dburl}")
+    String jmsUrl;
+
     @Bean
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUser(environment.getProperty("USERNAME"));
+        fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
         return fakeDataSource;
+    }
+
+    @Bean
+    public JmsDataSource jmsDataSource(){
+        JmsDataSource jmsDataSource = new JmsDataSource();
+        jmsDataSource.setUser(jmsUser);
+        jmsDataSource.setPassword(jmsPassword);
+        jmsDataSource.setUrl(jmsUrl);
+        return jmsDataSource;
     }
 
     @Bean

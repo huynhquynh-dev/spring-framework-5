@@ -2,6 +2,7 @@ package com.lionhuynh.springframework5;
 
 import com.lionhuynh.springframework5.controllers.MyController;
 import com.lionhuynh.springframework5.exxamplebeans.FakeDataSource;
+import com.lionhuynh.springframework5.exxamplebeans.JmsDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -18,5 +19,9 @@ public class SpringFramework5Application {
         FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
 
         System.out.println(fakeDataSource.getUser());
+
+        JmsDataSource jmsDataSource = (JmsDataSource) ctx.getBean(JmsDataSource.class);
+
+        System.out.println(jmsDataSource.getUser());
     }
 }
