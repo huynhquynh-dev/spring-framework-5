@@ -1,9 +1,7 @@
 package com.lionhuynh.springframework5;
 
-import com.lionhuynh.springframework5.controllers.ConstructorInjectedController;
-import com.lionhuynh.springframework5.controllers.GetterInjectedController;
 import com.lionhuynh.springframework5.controllers.MyController;
-import com.lionhuynh.springframework5.controllers.PropertyInjectedController;
+import com.lionhuynh.springframework5.exxamplebeans.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -17,10 +15,8 @@ public class SpringFramework5Application {
 
         MyController controller = (MyController) ctx.getBean("myController");
 
-        System.out.println(controller.hello());
-        System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
-        System.out.println(ctx.getBean(GetterInjectedController.class).sayHello());
-        System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
+        FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
 
+        System.out.println(fakeDataSource.getUser());
     }
 }
