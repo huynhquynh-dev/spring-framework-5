@@ -13,7 +13,14 @@ public class SpringFramework5Application {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(SpringFramework5Application.class, args);
+        ApplicationContext ctx = SpringApplication.run(SpringFramework5Application.class, args);
+
+        MyController controller = (MyController) ctx.getBean("myController");
+
+        System.out.println(controller.hello());
+        System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(GetterInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
 
     }
 }
