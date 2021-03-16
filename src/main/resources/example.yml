@@ -1,0 +1,35 @@
+name: lion
+
+names:
+  - lionhuynh
+  - hacklion
+  - hackwhite
+
+pound_sign: "#"
+
+book:
+  author: lionhuynh
+  publisher: random house
+
+truth: yes
+
+another_true: True
+
+more_true: true
+
+false: no
+
+string_val: "This is it's quote"
+
+conlon_string: "My courses: one two three"
+
+include_new_lines: |
+  jhafjkjmcx
+  jdahfckja
+  kjdhfcjkas
+
+igrone_new_lines: >
+  this is
+  just one long
+  string
+
