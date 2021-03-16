@@ -1,12 +1,7 @@
 package com.lionhuynh.springframework5;
 
-import com.lionhuynh.springframework5.controllers.ConstructorInjectedController;
-import com.lionhuynh.springframework5.controllers.GetterInjectedController;
-import com.lionhuynh.springframework5.controllers.MyController;
-import com.lionhuynh.springframework5.controllers.PropertyInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class SpringFramework5Application {
