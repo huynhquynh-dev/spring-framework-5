@@ -1,4 +1,4 @@
-package com.lionhuynh.springframework5.services;
+package com.lionhuynh.springframework5.repository;
 
 import org.springframework.stereotype.Repository;
 
@@ -7,18 +7,16 @@ public class GreetingRepositoryImpl implements GreetingRepository {
 
     @Override
     public String getEnglishGreeting() {
-        return "Hello - Primary Greeting service";
+        return "Hello - English";
     }
 
     @Override
     public String getSpanishGreeting() {
-        return "Servicio de Saludo Primario";
+        return "Hello - Spanish";
     }
 
     @Override
     public String getGermanGreeting() {
-
-        return "Primärer Grußdienst";
-
+        return "Hello - German";
     }
 }
