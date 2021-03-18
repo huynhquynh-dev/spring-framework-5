@@ -12,6 +12,20 @@ public class Person extends BaseEntity {
     @Column(name = "last_name")
     private String lastName;
 
+    public Person() {
+    }
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Person(Long id, String firstName, String lastName) {
+        super(id);
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public String getFirstName() {
         return firstName;
     }
