@@ -6,11 +6,13 @@ import com.lionhuynh.springframework5.repositories.OwnerRepository;
 import com.lionhuynh.springframework5.service.OwnerService;
 import com.lionhuynh.springframework5.service.PetService;
 import com.lionhuynh.springframework5.service.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceImpl extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final OwnerRepository ownerRepository;

@@ -2,11 +2,13 @@ package com.lionhuynh.springframework5.service.impl;
 
 import com.lionhuynh.springframework5.model.Vet;
 import com.lionhuynh.springframework5.service.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class VetServiceImpl extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
